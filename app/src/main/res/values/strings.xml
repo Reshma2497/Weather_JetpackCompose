@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Weather_JetpackCompose</string>
+    <string name="placeholder_search">Search</string>
+</resources>
