@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Weather_JetpackCompose</string>
     <string name="placeholder_search">Search</string>
+    <string name="no_WeatherLocation">"No weather location added yet! "</string>
 </resources>

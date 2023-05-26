@@ -19,6 +19,9 @@ class WeatherViewModel @Inject constructor(
     private val _weather = MutableStateFlow(WeatherModelModel())
     val weatherDetails: StateFlow<WeatherModelModel> = _weather
 
+    private val _weatherHistory = MutableStateFlow<List<WeatherModelModel>>(emptyList())
+    val weatherHistory: StateFlow<List<WeatherModelModel>> = _weatherHistory
+
 
     fun getWeatherReport(q: String, appId: String) {
         viewModelScope.launch {
@@ -26,5 +29,20 @@ class WeatherViewModel @Inject constructor(
             _weather.value=result
         }
     }
+
+    fun getWeatherReportHistory( history:Set<String>,appId: String ) {
+        viewModelScope.launch {
+            val weatherList = mutableListOf<WeatherModelModel>()
+
+            for (item in history) {
+                val result = repository.getWeather(item, appId)
+                weatherList.add(result)
+            }
+
+            _weatherHistory.value = weatherList
+
+        }
+    }
+
 
 }
