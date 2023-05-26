@@ -10,4 +10,6 @@ class RepositoryImpl @Inject constructor(
 ):Repository{
 
      override suspend fun getWeather(q:String,appId:String): WeatherModelModel=apiRequest.getWeather(q, appId)
+
+    override suspend fun getWeather(latitude: Double, longitude: Double): WeatherModelModel=apiRequest.getWeather(latitude,longitude)
 }

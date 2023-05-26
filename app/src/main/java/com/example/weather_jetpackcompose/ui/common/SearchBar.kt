@@ -25,17 +25,18 @@ import com.example.weather_jetpackcompose.ui.theme.SkyBlue
 @Composable
 fun SearchBar(
 
-    searchQuery: MutableState<String>, searchPlaceholder:String, modifier: Modifier = Modifier
+    searchQuery: MutableState<String>, searchPlaceholder:String,onSearchClicked: () -> Unit, modifier: Modifier = Modifier
 ) {
     OutlinedTextField(
         value = searchQuery.value,
         onValueChange = { searchQuery.value = it },
-        leadingIcon = {
+        trailingIcon = {
+            IconButton(onClick = onSearchClicked) { // Add the IconButton with the click listener
                 Icon(
                     imageVector = Icons.Default.Search,
                     contentDescription = null
                 )
-
+            }
         },
         colors = TextFieldDefaults.textFieldColors(
 //            backgroundColor = Color.White,

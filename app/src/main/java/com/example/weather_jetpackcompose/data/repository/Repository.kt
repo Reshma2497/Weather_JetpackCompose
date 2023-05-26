@@ -5,4 +5,6 @@ import com.example.weather_jetpackcompose.data.model.WeatherModelModel
 interface  Repository {
 
     suspend fun getWeather(q:String,appId:String):WeatherModelModel
+
+    suspend fun getWeather(latitude: Double, longitude: Double): WeatherModelModel
 }
