@@ -1,6 +1,6 @@
 package com.example.weather_jetpackcompose.data.remote
 
-import com.example.weather_jetpackcompose.data.model.WeatherModelModel
+import com.example.weather_jetpackcompose.data.model.weather.WeatherModelModel
 import com.example.weather_jetpackcompose.data.remote.ApiDetails.APP_ID
 import retrofit2.http.GET
 import retrofit2.http.Query
